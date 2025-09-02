@@ -24,10 +24,10 @@ Organiza los dispositivos siguiendo la topología mostrada en el video.
 
 📸 Documentación del Proceso
 Paso 2: Topología Final
-![Topología final del laboratorio](images/lab-dia1/topologia.png))
+![Topología a armar](images/lab-dia1/topologia.png)
 
 Paso 1: Antes de Conectar
-(Aquí debes insertar tu imagen de los dispositivos sin conexión. Por ejemplo: ![Dispositivos sin cables](images/lab-dia1/dispositivos-sin-conexion.png))
+(Aquí debes insertar tu imagen de los dispositivos sin conexión. Por ejemplo: ![Dispositivos sin cables](images/lab-dia1/dispositivos-sin-conexion.png)
 
 Paso 2: Topología Final
 ![Topología final del laboratorio](images/lab-dia1/topologia-final.png))
