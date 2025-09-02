@@ -1,9 +1,6 @@
-
-
-````markdown
 # 📝 Laboratorio Práctico: Configuración de Contraseñas de Acceso
 
-En este laboratorio trabajé con la configuración de **nombres de host** y **contraseñas de acceso** en dispositivos Cisco, aplicando diferentes métodos de seguridad para proteger el acceso.
+En este laboratorio trabajé con la configuración de **nombres de host** y **contraseñas de acceso** en dispositivos Cisco, aplicando distintos métodos de seguridad para proteger el acceso.
 
 ---
 
@@ -11,20 +8,21 @@ En este laboratorio trabajé con la configuración de **nombres de host** y **co
 
 ### 1. Cambio de nombres de host
 
-En el router y el switch configuré los nombres de host:
+Configuré los nombres de host en el router y en el switch de la siguiente manera:
 
 ```bash
+# Configuración del router
 Router> enable
 Router# configure terminal
 Router(config)# hostname R1
 R1(config)# exit
 
+# Configuración del switch
 Switch> enable
 Switch# configure terminal
 Switch(config)# hostname SW1
 SW1(config)# exit
-````
-
+Nota: Cambiar los nombres de host ayuda a identificar los dispositivos en la red y facilita la administración.
 ---
 
 ### 2. Configuración de contraseña `enable` sin cifrar
