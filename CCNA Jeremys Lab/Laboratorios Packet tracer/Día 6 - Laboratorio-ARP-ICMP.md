@@ -19,12 +19,19 @@
     * Switch S2 (si están conectados)
     * PC2
     * PC3
+
 ![ARP Request - Broadcast](images/lab-dia6/arp-request.png)
+
 * Solo **PC3** responderá con un **ARP Reply (unicast)** a PC1 con su dirección MAC.
+
 ![ARP Reply - Unicast](images/lab-dia6/arp-reply.png)
+
 * Una vez resuelto ARP, se enviará el **ICMP Echo Request (ping)** de PC1 a PC3 (unicast).
+
 ![ICMP Echo Request](images/lab-dia6/icmp-request.png)
+
 * PC3 contestará con **ICMP Echo Reply (unicast)** a PC1.
+
 ![ICMP Echo Reply](images/lab-dia6/icmp-reply.png)
 
 Resumen:
