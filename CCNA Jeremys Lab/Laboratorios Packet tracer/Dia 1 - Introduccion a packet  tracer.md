@@ -23,13 +23,14 @@ Utiliza la herramienta "Automatically Choose Connection Type" (el ícono del ray
 Organiza los dispositivos siguiendo la topología mostrada en el video.
 
 📸 Documentación del Proceso
-Aquí es donde documentarás tu trabajo con capturas de pantalla, mostrando el progreso de tu laboratorio.
+Paso 2: Topología Final
+![Topología final del laboratorio](images/lab-dia1/topologia.png))
 
 Paso 1: Antes de Conectar
 (Aquí debes insertar tu imagen de los dispositivos sin conexión. Por ejemplo: ![Dispositivos sin cables](images/lab-dia1/dispositivos-sin-conexion.png))
 
 Paso 2: Topología Final
-(Aquí debes insertar una captura de pantalla del diagrama con todos los dispositivos conectados. Por ejemplo: ![Topología final del laboratorio](images/lab-dia1/topologia-final.png))
+![Topología final del laboratorio](images/lab-dia1/topologia-final.png))
 
 ✅ Reflexión del Laboratorio
 En este laboratorio, aprendiste a usar la herramienta de conexión automática de Packet Tracer.
