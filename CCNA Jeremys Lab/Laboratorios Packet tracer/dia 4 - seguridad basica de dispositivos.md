@@ -1,4 +1,4 @@
-Perfecto. He unificado todo en un solo archivo `.md`, con estructura consistente, títulos claros, bloques de código bien cerrados y formato listo para GitHub. Aquí tienes la versión final:
+
 
 ````markdown
 # 📝 Laboratorio Práctico: Configuración de Contraseñas de Acceso
