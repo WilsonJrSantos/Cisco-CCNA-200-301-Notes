@@ -4,7 +4,7 @@
 
 Este curso está diseñado para cualquiera que quiera:
 * Aprender sobre redes de computadoras.
-![Diagrama de una red de computadoras](images/red-lan.png)
+![Diagrama de una red de computadoras](images/dia1/red-lan.png)
 
 No se requiere experiencia previa; solo una familiaridad básica con computadoras.
 
@@ -18,18 +18,18 @@ Una red de computadoras es una red de telecomunicaciones digital que permite a l
     * **Clientes:** Dispositivos que acceden a un servicio (ej. tu computadora al ver un video en YouTube).
     * **Servidores:** Dispositivos que proporcionan un servicio (ej. el servidor de YouTube que envía el video).
     
-    ![Interacción cliente-servidor](images/Cliente-servidor.png)
+    ![Interacción cliente-servidor](images/dia1/Cliente-servidor.png)
     
     Un mismo dispositivo puede funcionar como cliente y servidor en diferentes situaciones.
 
 * **Dispositivos de red:**
-     ![Simbologia de dispositivos](images/Simbologia1.png)
+     ![Simbologia de dispositivos](images/dia1/Simbologia1.png)
     * **Switches:** Conectan a los dispositivos finales dentro de una misma **LAN (Local Area Network)**. Tienen múltiples puertos (24+) para conectar PCs, servidores, etc.
-        ![Un switch Cisco Catalyst](images/switch.png)
+        ![Un switch Cisco Catalyst](images/dia1/switch.png)
     * **Routers:** Conectan redes separadas (LANs) entre sí y envían datos a través de Internet. Tienen menos interfaces que los switches.
-     ![Un router Cisco ISR](images/router.png)
+     ![Un router Cisco ISR](images/dia1/router.png)
     * **Firewalls:** Controlan y monitorean el tráfico de la red basándose en reglas. Pueden ser dispositivos de hardware que filtran el tráfico entre redes (`Network Firewalls`) o software que se ejecuta en una computadora (`Host-based Firewalls`). Los que tienen funciones avanzadas se conocen como **Next-Generation Firewalls**.
-     ![Un firewall de red](images/firewall.png)
+     ![Un firewall de red](images/dia1/firewall.png)
 
 ---
 
