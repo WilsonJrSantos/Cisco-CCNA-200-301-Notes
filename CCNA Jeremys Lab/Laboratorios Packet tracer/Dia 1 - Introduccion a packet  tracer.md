@@ -1,6 +1,10 @@
 👨‍💻 Laboratorio: Creación de Topología de Red en Packet Tracer
+
 📋 Instrucciones del Laboratorio
-Este laboratorio práctico se enfoca en la construcción de una topología de red básica en Cisco Packet Tracer. El objetivo es familiarizarse con los dispositivos y sus interconexiones.
+
+Este laboratorio práctico se enfoca en la construcción de una topología de red básica en Cisco Packet Tracer. 
+
+El objetivo es familiarizarse con los dispositivos y sus interconexiones.
 
 Dispositivos Necesarios:
 Routers: 2x Cisco 2911
@@ -23,7 +27,8 @@ Utiliza la herramienta "Automatically Choose Connection Type" (el ícono del ray
 Organiza los dispositivos siguiendo la topología mostrada en el video.
 
 📸 Documentación del Proceso
-Paso 2: Topología Final
+
+Topologia a Armar.
 ![Topología a armar](images/lab-dia1/topologia.png)
 
 Paso 1: Antes de Conectar
@@ -32,9 +37,9 @@ Paso 1: Antes de Conectar
 Paso 2: Topología Final
 ![Topología final del laboratorio](images/lab-dia1/topologia-final.png))
 
-✅ Reflexión del Laboratorio
-En este laboratorio, aprendiste a usar la herramienta de conexión automática de Packet Tracer.
+eflexión del Laboratorio
+En este laboratorio, aprendi a usar la herramienta de conexión automática de Packet Tracer.
 
-Identificaste los dispositivos clave en una red y su rol en la interconexión.
+identifique los dispositivos clave en una red y su rol en la interconexión.
 
-Confirmaste que no se necesita ninguna configuración en este punto para que los dispositivos se conecten físicamente.
+Confirme que no se necesita ninguna configuración en este punto para que los dispositivos se conecten físicamente.
