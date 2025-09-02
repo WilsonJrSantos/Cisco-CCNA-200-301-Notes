@@ -1,16 +1,17 @@
-Aquí lo tienes ya limpio en **formato `.md`** para que lo uses directo en GitHub 👇
+Perfecto. He unificado todo en un solo archivo `.md`, con estructura consistente, títulos claros, bloques de código bien cerrados y formato listo para GitHub. Aquí tienes la versión final:
 
 ````markdown
 # 📝 Laboratorio Práctico: Configuración de Contraseñas de Acceso
 
-En este laboratorio trabajé con la configuración de **nombres de host** y **contraseñas de acceso** en dispositivos Cisco, aplicando diferentes métodos de seguridad para proteger el acceso.  
+En este laboratorio trabajé con la configuración de **nombres de host** y **contraseñas de acceso** en dispositivos Cisco, aplicando diferentes métodos de seguridad para proteger el acceso.
 
 ---
 
-## 📋 Pasos que seguí  
+## 📋 Pasos que seguí
 
-### 1. Cambio de nombres de host  
-En el router y el switch configuré los nombres de host:  
+### 1. Cambio de nombres de host
+
+En el router y el switch configuré los nombres de host:
 
 ```bash
 Router> enable
@@ -44,7 +45,7 @@ Probé el acceso al modo EXEC privilegiado con la contraseña.
 R1# show running-config
 ```
 
-![Contraseña en texto plano](images/lab-dia1/contrasena-texto-plano.png)
+![Contraseña en texto plano](images/lab-dia4/contrasena-texto-plano.png)
 
 ---
 
@@ -56,9 +57,9 @@ R1(config)# service password-encryption
 
 Al volver a revisar el `running-config`, confirmé que la contraseña ya no se mostraba en texto plano.
 
----
-![Contraseña cifrada](images/lab-dia1/contrasena-cifrada.png)
+![Contraseña cifrada](images/lab-dia4/contrasena-cifrada.png)
 
+---
 
 ### 5. Configuración de `enable secret`
 
@@ -76,7 +77,7 @@ Probé ambas contraseñas (`enable password CCNA` y `enable secret Cisco`) y con
 R1# show running-config
 ```
 
-![Contraseñas visualizadas en running-config](images/lab-dia1/contrasena-md5.png)
+![Contraseñas visualizadas en running-config](images/lab-dia4/contrasena-md5.png)
 
 * `enable password CCNA` → aparece cifrada con **Type 7**.
 * `enable secret Cisco` → aparece cifrada con **MD5 (Type 5)**.
@@ -92,9 +93,9 @@ Building configuration...
 [OK]
 ```
 
+---
 
-
-## ✅ Conclusiones
+## Conclusiones
 
 * Configuré correctamente los nombres de host y las contraseñas de acceso en router y switch.
 * Practiqué el uso de **service password-encryption** para proteger contraseñas básicas.
@@ -103,3 +104,4 @@ Building configuration...
 * Guardé la configuración para que los cambios persistieran después de un reinicio.
 
 ```
+
