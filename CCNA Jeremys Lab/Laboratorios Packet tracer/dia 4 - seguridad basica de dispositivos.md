@@ -23,8 +23,9 @@ Switch# configure terminal
 Switch(config)# hostname SW1
 SW1(config)# exit
 Nota: Cambiar los nombres de host ayuda a identificar los dispositivos en la red y facilita la administración.
----
 
+
+```
 ### 2. Configuración de contraseña `enable` sin cifrar
 
 ```bash
