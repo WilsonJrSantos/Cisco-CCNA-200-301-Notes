@@ -35,7 +35,7 @@ Paso 1: Antes de Conectar
 (Aquí debes insertar tu imagen de los dispositivos sin conexión. Por ejemplo: ![Dispositivos sin cables](images/lab-dia1/dispositivos-sin-conexion.png)
 
 Paso 2: Topología Final
-![Topología final del laboratorio](images/lab-dia1/topologia-final.png))
+![Topología final del laboratorio](images/lab-dia1/topologia-final.png)
 
 eflexión del Laboratorio
 En este laboratorio, aprendi a usar la herramienta de conexión automática de Packet Tracer.
