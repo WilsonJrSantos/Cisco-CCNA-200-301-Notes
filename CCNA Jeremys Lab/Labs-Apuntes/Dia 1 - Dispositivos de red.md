@@ -23,7 +23,7 @@ Una red de computadoras es una red de telecomunicaciones digital que permite a l
     Un mismo dispositivo puede funcionar como cliente y servidor en diferentes situaciones.
 
 * **Dispositivos de red:**
- ![Simbologia de dispositivos](images/simbologia1.png)
+     ![Simbologia de dispositivos](images/Simbologia1.png)
     * **Switches:** Conectan a los dispositivos finales dentro de una misma **LAN (Local Area Network)**. Tienen múltiples puertos (24+) para conectar PCs, servidores, etc.
         ![Un switch Cisco Catalyst](images/switch.png)
     * **Routers:** Conectan redes separadas (LANs) entre sí y envían datos a través de Internet. Tienen menos interfaces que los switches.
