@@ -8,6 +8,7 @@ Este día se centra en los modelos de red, en particular el **Modelo OSI** y la 
 
 #### **1. El Modelo OSI**
 ![Diagrama del Modelo OSI](images/dia3/modelo-osi.png)
+
 El **Modelo OSI (Open Systems Interconnection)** es un modelo conceptual de 7 capas que estandariza las funciones de red. Las capas trabajan juntas a través de la **interacción entre capas adyacentes** y la **interacción en la misma capa** para permitir la comunicación.
 
 #### **2. Las 7 Capas del Modelo OSI**
