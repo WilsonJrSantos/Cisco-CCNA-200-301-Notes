@@ -146,7 +146,7 @@ Broadcast: 192.168.1.255
 
 ```
 
-![Dirección de broadcast con host en unos](images/dia7/red-broadcast.p)
+![Dirección de broadcast con host en unos](images/dia7/red-broadcast.png)
 
 ---
 
