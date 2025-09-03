@@ -126,19 +126,19 @@ ping 182.98.255.254 y ping 201.191.20.1
 - **Ping de PC2 a PC1 y PC3:**
 ```
 
-ping 182.98.255.254 y ping 201.191.20.1
+ping 15.0.0.1y ping 201.191.20.1
 
 ```
-![Verificación de conectividad PC1](images/lab-dia8/verificacion-conectividad-pc1.png)
+![Verificación de conectividad PC1](images/lab-dia8/verificacion-conectividad-pc2.png)
 
 
 - **Ping de PC3 a PC1 y PC2:**
 ```
 
-ping 182.98.255.254 y ping 201.191.20.1
+ping 182.98.255.254 y 15.0.0.1
 
 ```
-![Verificación de conectividad PC1](images/lab-dia8/verificacion-conectividad-pc1.png)
+![Verificación de conectividad PC1](images/lab-dia8/verificacion-conectividad-pc3.png)
 
 
 ---
