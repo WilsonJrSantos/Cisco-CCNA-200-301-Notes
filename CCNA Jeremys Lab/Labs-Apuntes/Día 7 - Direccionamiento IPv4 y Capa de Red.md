@@ -4,113 +4,193 @@
 
 ## 🌐 Capa de Red (Layer 3) del Modelo OSI
 
-La **Capa de Red** es fundamental para la comunicación entre redes.
+**Funciones principales:**
 
--   Proporciona conectividad entre dispositivos finales en **diferentes redes** (fuera de la LAN).
--   Utiliza **direcciones lógicas (IP)** para el enrutamiento.
--   Permite la **selección de rutas** entre origen y destino.
--   Los **routers** operan en esta capa.
+- Conectividad entre dispositivos en **diferentes redes** (fuera de la LAN)  
+- Uso de **direcciones lógicas (IP)**  
+- **Selección de rutas** entre origen y destino  
+- Los **routers** operan en esta capa
 
-![Modelo OSI con la Capa 3 resaltada](images/dia7/osi-model-layer3.png)
+```
+
+OSI Model:
+7 - Application
+6 - Presentation
+5 - Session
+4 - Transport
+3 - Network  <-- Layer 3
+2 - Data Link
+1 - Physical
+
+```
 
 ---
 
 ## 💻 Enrutamiento (Routing)
 
-El enrutamiento es el proceso de enviar paquetes de una red a otra. Un router utiliza la dirección IP de destino para determinar la mejor ruta.
+- Los **switches (Capa 2)** no separan redes; conectan dispositivos dentro de la misma LAN  
+- Al agregar un **router** entre dos switches, se crean **redes separadas**, cada una con su propio rango IP  
+
+**Ejemplo de redes separadas:**  
+- 192.168.1.0/24 (255.255.255.0)  
+- 192.168.2.0/24 (255.255.255.0)  
 
 ![Topología de red con un router](images/dia7/network-routing-topology.png)
 
+- Los routers tienen **IP únicas en cada interfaz** dependiendo de la red a la que están conectados  
+  - G0/0 → 192.168.1.254/24  
+  - G0/1 → 192.168.2.254/24  
+
+- Todos los hosts de una LAN comparten la **porción de red** del IP, pero el **host ID** es único  
+  - Ejemplo: 192.168.1.100, 192.168.1.105, 192.168.1.205 → mismos primeros 3 octetos → misma red  
+
+- Los mensajes de **broadcast** no atraviesan routers; permanecen dentro de la LAN local
+
 ---
 
-## 🔢 Direccionamiento IPv4
+## 📝 IPv4 Header
 
-Una dirección IPv4 es una dirección lógica de **32 bits (4 bytes)**.
+- **IP** es el protocolo principal de capa 3  
+- IPv4 utiliza **32 bits (4 bytes)** por dirección  
+- Cada octeto se representa en **binario**  
+- Los encabezados contienen:  
+  - IP de **origen**  
+  - IP de **destino**
+
+**Ejemplo:**  
+- 192.168.1.254 → binario: `11000000.10101000.00000001.11111110`  
+- Cada grupo de 8 bits se llama **OCTETO**  
 
 ![Estructura de una dirección IPv4](images/dia7/ipv4-address-structure.png)
+![Estructura de Header IPv4](images/dia7/ipv4-header.png)
 
-### Conversión entre Binario y Decimal
+---
 
-Cada octeto (8 bits) se convierte a un valor decimal. Para convertir, se suman las potencias de 2 (128, 64, 32, 16, 8, 4, 2, 1) donde el bit es `1`.
+## 🔢 Conversión Binario ↔ Decimal
 
--   **Ejemplo de Binario a Decimal:** `11000000` = (1\*128) + (1\*64) = **192**.
+**Binario → Decimal**:  
+```
 
--   **Ejemplo de Decimal a Binario:** Para 168: `128` cabe en `168` (168-128=40), `64` no cabe en `40`, `32` sí (40-32=8), `16` no, `8` sí (8-8=0), y el resto no. Por lo tanto, `10101000`.
+10001111 = 128 + 8 + 4 + 2 + 1 = 143
+01110110 = 64 + 32 + 16 + 4 + 2 = 118
+11101100 = 128 + 64 + 32 + 8 + 4 = 236
+
+```
+
+**Decimal → Binario (ejemplo con 221):**  
+- Restamos de izquierda a derecha según los valores de los bits:  
+```
+
+221 - 128 = 93 → 1
+93 - 64 = 29 → 1
+29 - 32 = no → 0
+29 - 16 = 13 → 1
+13 - 8 = 5 → 1
+5 - 4 = 1 → 1
+1 - 2 = no → 0
+1 - 1 = 0 → 1
+Resultado: 11011101
+
+```
+
+**Otro ejemplo: 127 → 01111111**  
+**Otro ejemplo: 207 → 11001111**  
 
 ![Ejemplos de conversión binaria a decimal](images/dia7/binary-decimal-conversion.png)
 
 ---
 
-### Clases de Direcciones IPv4
+## 🏷️ Clases de Direcciones IPv4
 
-Las direcciones IPv4 se dividen en clases, que determinan la porción de red y de host por defecto.
+| Clase | Primer Octeto | Prefijo | Máscara      | Notas                      |
+|-------|---------------|---------|-------------|----------------------------|
+| A     | 0-127         | /8      | 255.0.0.0   | Redes grandes; 127 = loopback |
+| B     | 128-191       | /16     | 255.255.0.0 | Redes medianas             |
+| C     | 192-223       | /24     | 255.255.255.0 | Redes pequeñas            |
+| D     | 224-239       | N/A     | N/A         | Multicast                  |
+| E     | 240-255       | N/A     | N/A         | Reservadas / experimentales |
 
-| Clase | Rango Numérico (Primer Octeto) | Longitud del Prefijo por Defecto | Máscara de Red (Netmask) por Defecto |
-| :---- | :----------------------------- | :------------------------------- | :----------------------------------- |
-| **A** | 0-127 | `/8` | `255.0.0.0` |
-| **B** | 128-191 | `/16` | `255.255.0.0` |
-| **C** | 192-223 | `/24` | `255.255.255.0` |
-| **D** | 224-239 | `N/A` | `N/A (Multicast)` |
-| **E** | 240-255 | `N/A` | `N/A (Reservada)` |
+**Ejemplo:**  
+- 12.128.251.23/8 → Clase A → Network: 12, Host: 128.251.23  
+- 154.78.111.32/16 → Clase B → Network: 154.78, Host: 111.32  
+- 192.168.1.254/24 → Clase C → Network: 192.168.1, Host: 254  
 
-* **Direcciones de Loopback:** Rango `127.0.0.0` a `127.255.255.255`. Se usan para probar la pila de red localmente.
-* **Direcciones Multicast:** Rango `224.0.0.0` a `239.255.255.255`. Usadas para comunicación de grupo.
+![Ejemplos de conversion de binario a decimal](images/dia7/binary-decimal-conversion.png)
+
+---
+
+## 🧮 Netmask y Prefijo
+
+- La **netmask** indica qué parte de la IP es red y qué parte es host  
+- Se representa en **dotted decimal** o **prefijo /n**  
+
+| Clase | Prefijo | Netmask           |
+|-------|---------|-----------------|
+| A     | /8      | 255.0.0.0       |
+| B     | /16     | 255.255.0.0     |
+| C     | /24     | 255.255.255.0   |
 
 ---
 
 ## 📌 Direcciones de Red y Broadcast
 
-Dentro de cada red, hay dos direcciones reservadas que no se pueden asignar a un host:
+- **Network Address:** host todos 0 → identifica la red → no se asigna a host  
+- **Broadcast Address:** host todos 1 → envía mensaje a toda la red → no se asigna a host  
 
-* **Dirección de Red:** Es la primera dirección de la red. La porción de host de la dirección está en **todos ceros**.
+**Ejemplo: 192.168.1.0/24**  
+```
 
-* **Dirección de Broadcast:** Es la última dirección de la red. La porción de host de la dirección está en **todos unos**.
-    ![Dirección de broadcast con host en unos](images/dia7/red-broadcast.png)
+Network: 192.168.1.0
+Hosts:   192.168.1.1 - 192.168.1.254
+Broadcast: 192.168.1.255
+
+```
+
+![Dirección de broadcast con host en unos](images/dia7/red-broadcast.p)
 
 ---
 
-## 🧠 Quiz de Conversión de Direcciones
+## 🧮 Ejemplos de Conversión IPv4
 
-### Preguntas de Conversión a Decimal
+**Binario → Decimal**
 
-**1. Convierte la siguiente dirección IPv4 a notación decimal:**
-`00111111 00111000 11100111 00010011`
-**Respuesta:** `63.56.231.19`
+| Binario                        | Decimal       |
+|--------------------------------|---------------|
+| 00111111 00111000 11100111 00010011 | 63.56.231.19  |
+| 11110011 01111111 01100010 00000001 | 243.127.98.1  |
+| 01101111 00000110 01011001 11000111 | 111.6.89.199  |
+| 11001111 11000110 00101111 01001100 | 207.198.47.76 |
+| 01100100 11001001 00100001 11111101 | 100.201.33.253 |
 
-**2. Convierte la siguiente dirección IPv4 a notación decimal:**
-`11110011 01111111 01100010 00000001`
-**Respuesta:** `243.127.98.1`
+**Decimal → Binario**
 
-**3. Convierte la siguiente dirección IPv4 a notación decimal:**
-`01101111 00000110 01011001 11000111`
-**Respuesta:** `111.6.89.199`
+| Decimal         | Binario                          |
+|----------------|----------------------------------|
+| 88.46.90.91     | 01011000 00101110 01011010 01011011 |
+| 221.234.246.163 | 11011101 11101010 11110110 10100011 |
+| 3.41.143.222    | 00000011 00101001 10001111 11011110 |
+| 10.200.231.91   | 00001010 11001000 11100111 01011011 |
+| 248.87.255.152  | 11111000 01010111 11111111 10011000 |
 
-**4. Convierte la siguiente dirección IPv4 a notación decimal:**
-`11001111 11000110 00101111 01001100`
-**Respuesta:** `207.198.47.76`
+---
 
-**5. Convierte la siguiente dirección IPv4 a notación decimal:**
-`01100100 11001001 00100001 11111101`
-**Respuesta:** `100.201.33.253`
+## ❓ Quiz de Conversión IPv4
 
-### Preguntas de Conversión a Binario
+**Binario → Decimal**
 
-**6. Convierte la siguiente dirección IPv4 a notación binaria:**
-`88.46.90.91`
-**Respuesta:** `01011000 00101110 01011010 01011011`
+1. `00111111 00111000 11100111 00010011` → 63.56.231.19  
+2. `11110011 01111111 01100010 00000001` → 243.127.98.1  
+3. `01101111 00000110 01011001 11000111` → 111.6.89.199  
+4. `11001111 11000110 00101111 01001100` → 207.198.47.76  
+5. `01100100 11001001 00100001 11111101` → 100.201.33.253  
 
-**7. Convierte la siguiente dirección IPv4 a notación binaria:**
-`221.234.246.163`
-**Respuesta:** `11011101 11101010 11110110 10100011`
+**Decimal → Binario**
 
-**8. Convierte la siguiente dirección IPv4 a notación binaria:**
-`3.41.143.222`
-**Respuesta:** `00000011 00101001 10001111 11011110`
+6. `88.46.90.91` → 01011000 00101110 01011010 01011011  
+7. `221.234.246.163` → 11011101 11101010 11110110 10100011  
+8. `3.41.143.222` → 00000011 00101001 10001111 11011110  
+9. `10.200.231.91` → 00001010 11001000 11100111 01011011  
+10. `248.87.255.152` → 11111000 01010111 11111111 10011000
+```
 
-**9. Convierte la siguiente dirección IPv4 a notación binaria:**
-`10.200.231.91`
-**Respuesta:** `00001010 11001000 11100111 01011011`
 
-**10. Convierte la siguiente dirección IPv4 a notación binaria:**
-`248.87.255.152`
-**Respuesta:** `11111000 01010111 11111111 10011000`
