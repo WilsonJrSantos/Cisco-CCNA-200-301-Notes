@@ -65,7 +65,7 @@ Dentro de cada red, hay dos direcciones reservadas que no se pueden asignar a un
 * **Dirección de Red:** Es la primera dirección de la red. La porción de host de la dirección está en **todos ceros**.
 
 * **Dirección de Broadcast:** Es la última dirección de la red. La porción de host de la dirección está en **todos unos**.
-    ![Dirección de broadcast con host en unos](images/dia7/red-broadcast)
+    ![Dirección de broadcast con host en unos](images/dia7/red-broadcast.png)
 
 ---
 
