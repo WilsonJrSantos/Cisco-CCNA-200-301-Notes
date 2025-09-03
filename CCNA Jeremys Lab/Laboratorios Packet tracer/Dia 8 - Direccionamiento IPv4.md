@@ -88,7 +88,7 @@ show ip interface brief
 ![Verificación de la configuración](images/lab-dia8/verificacion-configuracion.png)
 
 ## 5. Confirmar configuración y guardarla
-### 5.1 Ver la informacion
+### 5.1 Ver la Configuración
 Confirmar la información
 ```
 show running-config
@@ -96,7 +96,7 @@ show running-config
 ```
 ![Confirmar la configuración](images/lab-dia8/confirmar-configuracion.png)
 
-### 5.2 Ver la informacion
+### 5.2 Guardar la Configuración
 Guardar los cambios realizados en la configuración en la memoria no volátil.
 - **Comando:**
 ```
