@@ -52,12 +52,50 @@ El comando `show mac address-table` en un switch Cisco muestra la tabla de direc
 ### **Ping (ICMP)**
 La utilidad `ping` se usa para probar la conectividad de red y el tiempo de viaje de los paquetes.
 - Utiliza dos mensajes **unicast**: `ICMP Echo Request` (enviado) e `ICMP Echo Reply` (recibido).
+- Por defecto, un Cisco IOS envía **5 solicitudes/respuestas ICMP** con un tamaño de **100 bytes**.
+
+- Un **punto (.)** representa un ping fallido.
+
+- Un **signo de exclamación (!)** representa un ping exitoso.
+
+
+# Comandos útiles en Cisco IOS (modo EXEC privilegiado)
+
+### `PC1# show arp`
+Muestra la tabla ARP de los hosts.
+
+---
+
+### `SW1# show mac address-table`
+Muestra la tabla MAC del switch.
+
+- **Columnas:** VLAN – MAC Address – Type – Ports (interfaces).  
+- **VLAN (Virtual Local Area Network):** red lógica en la que está segmentado el switch.
+
+---
+
+### `SW1# clear mac address-table dynamic`
+Borra toda la tabla MAC dinámica del switch.  
+
+> Si se especifica una MAC en particular, elimina solo esa entrada.
+
+---
+
+### `SW1# clear mac address-table dynamic interface <interface-id>`
+Borra las entradas de la tabla MAC de un switch asociadas a una **interfaz específica**.
+
 
 ### **Tipos de Trama y Comportamiento del Switch**
 - **Tramas de Broadcast (`FFFF.FFFF.FFFF`) y Unicast Desconocidas:** El switch las **inunda** por todas las interfaces, excepto la de origen.
 - **Tramas Unicast Conocidas:** El switch las **reenvía** solo a la interfaz de destino.
 ![Ping](images/dia6/wireshark.png)
 ---
+
+
+
+
+
+
 
 ## Cuestionario de Repaso 
 
