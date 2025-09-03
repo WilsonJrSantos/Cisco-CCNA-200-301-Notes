@@ -22,7 +22,7 @@ Este paso es crucial para identificar el dispositivo en una red.
 hostname R1
 
 ```
-![Configuración del nombre de host](images/lab-dia1/configuracion-nombre-host.png)
+![Configuración del nombre de host](images/lab-dia8/configuracion-nombre-host.png)
 
 ## 2. Verificación de Interfaces
 Permite visualizar el estado y las direcciones IP de las interfaces del router.
@@ -32,7 +32,7 @@ Permite visualizar el estado y las direcciones IP de las interfaces del router.
 show ip interface brief
 
 ```
-![Verificación de interfaces](images/lab-dia1/verificacion-interfaces.png)
+![Verificación de interfaces](images/lab-dia8/verificacion-interfaces.png)
 
 ## 3. Asignación de Direcciones IP
 Se asignan las direcciones IP a las interfaces del router y se habilitan para su funcionamiento.
@@ -50,7 +50,7 @@ no shutdown
 description Conexión a SW1
 
 ```
-![Comando para asignar IP y descripción a la interfaz g0/0](images/lab-dia1/configuracion-ip-g00.png)
+![Comando para asignar IP y descripción a la interfaz g0/0](images/lab-dia8/configuracion-ip-g00.png)
 
 - **Comandos de ejemplo para g0/1:**
 ```
@@ -62,7 +62,7 @@ no shutdown
 description Conexión a SW2
 
 ```
-![Comando para asignar IP y descripción a la interfaz g0/1](images/lab-dia1/configuracion-ip-g01.png)
+![Comando para asignar IP y descripción a la interfaz g0/1](images/lab-dia8/configuracion-ip-g01.png)
 
 - **Comandos de ejemplo para g0/2:**
 ```
@@ -74,7 +74,7 @@ no shutdown
 description Conexión a SW3
 
 ```
-![Comando para asignar IP y descripción a la interfaz g0/2](images/lab-dia1/configuracion-ip-g02.png)
+![Comando para asignar IP y descripción a la interfaz g0/2](images/lab-dia8/configuracion-ip-g02.png)
 
 ---
 ## 4. Verificación de la Configuración
@@ -85,39 +85,60 @@ Revisar el estado de las interfaces después de la configuración.
 show ip interface brief
 
 ```
-![Verificación de la configuración](images/lab-dia1/verificacion-configuracion.png)
+![Verificación de la configuración](images/lab-dia8/verificacion-configuracion.png)
 
-## 5. Guardado de la Configuración
+## 5. Confirmar configuración y guardarla
+### 5.1 Ver la informacion
+Confirmar la información
+```
+show running-config
+
+```
+![Confirmar la configuración](images/lab-dia8/confirmar-configuracion.png)
+
+### 5.2 Ver la informacion
 Guardar los cambios realizados en la configuración en la memoria no volátil.
 - **Comando:**
 ```
-
 copy running-config startup-config
 
 ```
-![Guardado de la configuración](images/lab-dia1/guardado-configuracion.png)
+![Guardado de la configuración](images/lab-dia8/guardado-configuracion.png)
 
 ---
 
 ## 6. Configuración de Direcciones IP de PCs
 Se asignan las direcciones IP a los dispositivos finales para que puedan comunicarse en la red.
 - **PC1, PC2, PC3:** Configuración manual a través de la interfaz gráfica de **Packet Tracer**.
-![Captura de pantalla de la configuración IP en Packet Tracer](images/lab-dia1/configuracion-pc.png)
-
+![Captura de pantalla de la configuración IP en PC1](images/lab-dia8/configuracion-pc1.png)
+![Captura de pantalla de la configuración IP en PC2](images/lab-dia8/configuracion-pc2.png)
+![Captura de pantalla de la configuración IP en PC3](images/lab-dia8/configuracion-pc3.png)
 ## 7. Verificación de Conectividad
 Se realiza una prueba de conectividad de extremo a extremo.
-- **Comando de ejemplo:**
+- **Ping de PC1 a PC2 y PC3:**
 ```
 
-ping 182.98.255.254
+ping 182.98.255.254 y ping 201.191.20.1
 
 ```
-![Verificación de conectividad](images/lab-dia1/verificacion-conectividad.png)
+![Verificación de conectividad PC1](images/lab-dia8/verificacion-conectividad-pc1.png)
+
+- **Ping de PC2 a PC1 y PC3:**
+```
+
+ping 182.98.255.254 y ping 201.191.20.1
+
+```
+![Verificación de conectividad PC1](images/lab-dia8/verificacion-conectividad-pc1.png)
+
+
+- **Ping de PC3 a PC1 y PC2:**
+```
+
+ping 182.98.255.254 y ping 201.191.20.1
+
+```
+![Verificación de conectividad PC1](images/lab-dia8/verificacion-conectividad-pc1.png)
+
 
 ---
-
-## Anexo: Diagrama de Topología
-A continuación, se muestra un diagrama de la topología de red utilizada en este laboratorio.
-- **Topología:** R1 conectado a SW1 (via g0/0 y g0/1) y SW2 (via g0/2). PCs conectadas a los switches.
-![Diagrama de topología de red con router, switches y PCs](images/lab-dia1/topologia-red.png)
-```
