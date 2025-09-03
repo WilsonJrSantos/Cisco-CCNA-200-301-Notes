@@ -18,6 +18,7 @@
 ## Diagrama de Topología
 A continuación, se muestra un diagrama de la topología de red utilizada en este laboratorio.
 - **Topología:** R1 conectado a SW1 (via g0/0 y g0/1) y SW2 (via g0/2). PCs conectadas a los switches.
+
 ![Diagrama de topología de red con router, switches y PCs](images/lab-dia8/topologia-red.png)
 
 ## 1. Configuración del Nombre de Host
