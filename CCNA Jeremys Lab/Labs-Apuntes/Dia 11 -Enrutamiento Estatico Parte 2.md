@@ -1,6 +1,6 @@
 
 
-# Día 7 - Static Routing
+# Día 11 - Static Routing
 
 ## Resumen del Tema
 
@@ -15,6 +15,14 @@ Los routers, al igual que en sesiones anteriores, automáticamente añaden dos t
 Estos routers (R2, R3 y R4 en el diagrama) conocen sus redes directamente conectadas y sus propias direcciones IP, pero **no conocen las redes remotas**.
 
 ![Diagrama de red con routers R1-R4 y PCs](images/dia11/red-routers-pcs.png)
+
+![Configuración de interfaces](images/dia11/config-init.png)
+
+![Configuración de interfaces](images/dia11/conf-interfaces-r2.png)
+
+![Configuración de interfaces](images/dia11/conf-interfaces-r3.png)
+
+![Configuración de interfaces](images/dia11/conf-interfaces-r4.png)
 
 ### Introducción a las Rutas Estáticas
 
@@ -77,21 +85,18 @@ Una **ruta por defecto** (default route) es una ruta que se utiliza cuando no ex
 Después de configurar las rutas estáticas necesarias, las tablas de enrutamiento de los routers se actualizan para reflejar el conocimiento de las redes remotas.
 
 **Tabla de R1 (ejemplo):**
-````
-
+```bash
 Gateway of last resort is not set
 S 192.168.4.0/24 [1/0] via 192.168.13.3
-
 ```
+
 R1 ahora sabe cómo alcanzar la red `192.168.4.0/24` enviando los paquetes a `192.168.13.3`.
 
 **Tabla de R3 (ejemplo):**
-```
-
+```bash
 Gateway of last resort is not set
 S 192.168.1.0/24 [1/0] via 192.168.13.1
 S 192.168.4.0/24 [1/0] via 192.168.34.4
-
 ```
 R3 sabe cómo alcanzar ambas redes remotas (`192.168.1.0/24` y `192.168.4.0/24`) a través de sus respectivos siguientes saltos.
 
