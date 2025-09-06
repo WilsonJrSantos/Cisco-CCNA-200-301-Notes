@@ -14,6 +14,8 @@ Los routers, al igual que en sesiones anteriores, automáticamente añaden dos t
 
 Estos routers (R2, R3 y R4 en el diagrama) conocen sus redes directamente conectadas y sus propias direcciones IP, pero **no conocen las redes remotas**.
 
+
+
 ![Diagrama de red con routers R1-R4 y PCs](images/dia11/red-routers-pcs.png)
 
 ![Configuración de interfaces](images/dia11/config-init.png)
@@ -64,6 +66,20 @@ Las rutas estáticas se configuran usando el comando `ip route` en el modo de co
 
 ![Tabla de configuración de rutas estáticas](images/dia11/tabla-rutas-estaticas.png)
 
+### Default Gateway (Hosts)
+
+Los hosts (PCs) pueden comunicarse directamente dentro de su red.
+
+Para redes externas → usan su gateway predeterminado.
+
+Default route en PCs = 0.0.0.0/0.
+
+Ejemplo Linux:
+
+```bash
+address 192.168.1.10/24
+gateway 192.168.1.1
+```
 ### Rutas por Defecto (Default Routes)
 
 Una **ruta por defecto** (default route) es una ruta que se utiliza cuando no existe una ruta más específica en la tabla de enrutamiento para el destino de un paquete. Se representa con `0.0.0.0/0`.
@@ -78,7 +94,10 @@ Una **ruta por defecto** (default route) es una ruta que se utiliza cuando no ex
         ```
 -   Las rutas por defecto son las **menos específicas** posibles, ya que cubren todas las direcciones IP. Se utilizan comúnmente para enviar tráfico hacia redes externas, como Internet, mientras que las rutas más específicas manejan el tráfico interno.
 
-![Diagrama de una ruta por defecto apuntando a Internet](images/dia11/ruta-por-defecto-internet.png)
+![Diagrama de una ruta por defecto apuntando a Internet](images/dia11/ruta-por-defecto-internet2.png)
+![Diagrama de una ruta por defecto apuntando a Internet](images/dia11/ruta-por-defecto-internet3.png)
+![Diagrama de una ruta por defecto apuntando a Internet](images/dia11/ruta-por-defecto-internet4.png)
+
 
 ## Tablas de Enrutamiento después de la Configuración
 
@@ -89,8 +108,13 @@ Después de configurar las rutas estáticas necesarias, las tablas de enrutamien
 Gateway of last resort is not set
 S 192.168.4.0/24 [1/0] via 192.168.13.3
 ```
+![Configuración ruta estatica R1](images/dia11/conf-static-route-r1.png)
 
 R1 ahora sabe cómo alcanzar la red `192.168.4.0/24` enviando los paquetes a `192.168.13.3`.
+
+
+**Tabla de R2 por interfaz de salida**
+![Configuración ruta estatica R2](images/dia11/conf-static-route-r2.png)
 
 **Tabla de R3 (ejemplo):**
 ```bash
@@ -98,6 +122,7 @@ Gateway of last resort is not set
 S 192.168.1.0/24 [1/0] via 192.168.13.1
 S 192.168.4.0/24 [1/0] via 192.168.34.4
 ```
+![Configuración ruta estatica R2](images/dia11/conf-static-route-r3.png)
 R3 sabe cómo alcanzar ambas redes remotas (`192.168.1.0/24` y `192.168.4.0/24`) a través de sus respectivos siguientes saltos.
 
 **Tabla de R4 (ejemplo):**
@@ -107,6 +132,7 @@ Gateway of last resort is not set
 S 192.168.1.0/24 [1/0] via 192.168.34.3
 
 ```
+![Configuración ruta estatica R4](images/dia11/conf-static-route-r4.png)
 R4 ahora sabe cómo alcanzar la red `192.168.1.0/24` enviando los paquetes a `192.168.34.3`.
 
 ## Prueba de Conectividad
@@ -114,6 +140,7 @@ R4 ahora sabe cómo alcanzar la red `192.168.1.0/24` enviando los paquetes a `19
 Una vez configuradas las rutas estáticas, la comunicación entre PC1 y PC4 debería ser exitosa. El comando `ping` desde PC1 a PC4 (`ping 192.168.4.10`) debería mostrar una pérdida de paquetes del 0%.
 
 ![Resultado de ping exitoso entre PC1 y PC4](images/dia11/ping-exitoso.png)
+
 
 ## Puntos Clave Cubiertos
 
@@ -185,4 +212,3 @@ Para que R3 conozca las redes remotas que no están directamente conectadas, nec
 
 Por lo tanto, se necesitan **cuatro** rutas estáticas.
 **d) Cuatro rutas**
-```
