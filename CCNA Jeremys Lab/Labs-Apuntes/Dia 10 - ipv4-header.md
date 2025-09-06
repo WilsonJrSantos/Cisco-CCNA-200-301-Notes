@@ -1,8 +1,5 @@
 # CCNA 200-301: Día 10 - Encabezado IPv4
 
-## Resumen de la Lección
-
-Este documento resume los conceptos clave del día 10 del curso CCNA 200-301, centrándose en la estructura y los campos del **encabezado IPv4**. Se explican los diferentes campos que componen el encabezado, su propósito y cómo contribuyen a la funcionalidad del protocolo IP.
 
 ### Protocol Data Units (PDUs)
 
