@@ -125,8 +125,6 @@ A continuación se muestra la tabla de rutas final de los routers R1, R2 y R3 de
 | 192.168.3.254/32  | L      | GigabitEthernet0/1           |
 | 192.168.13.0/24   | C      | GigabitEthernet0/0           |
 | 192.168.13.3/32   | L      | GigabitEthernet0/0           |
-| 192.168.23.0/24   | C      | GigabitEthernet0/0           |
-| 192.168.23.3/32   | L      | GigabitEthernet0/0           |
 
 ![Tabla de rutas R3](images/lab-dia11/r3-tabla-rutas.png)
 
