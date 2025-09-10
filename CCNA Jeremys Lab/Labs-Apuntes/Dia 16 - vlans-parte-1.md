@@ -49,7 +49,7 @@ Las VLANs se configuran en los switches asignando las interfaces a una VLAN espe
 | `switchport access vlan [id]` | Asigna el puerto a la VLAN especificada. La crea si no existe previamente. |
 | `show vlan brief`             | Muestra un resumen de las VLANs configuradas y los puertos asignados.       |
 
-### Ejemplo de Configuración
+### Ejemplo de Configuración 
 
 ```
 
