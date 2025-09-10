@@ -102,5 +102,5 @@ SW1(config-if-range)# exit
 ![Prueba de conectividad entre PCs](images/dia16/pruebapc01.png)
 
 
-###  PC0 ----> PC1
+###  PC0 ----> PC6
 ![Prueba de conectividad entre PCs](images/dia16/pruebapc06.png)
