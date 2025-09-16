@@ -17,23 +17,18 @@ Existen dos métodos principales para configurar la VLAN nativa en un router:
 2.  **En la interfaz física:** Se asigna la dirección IP de la VLAN nativa directamente a la interfaz física del router. En este caso, no se necesita el comando `encapsulation dot1q`.
 ![Configuración Método 2](images/dia18/native-vlan-metodo-2a.png)    
 ![Configuración Método 2](images/dia18/native-vlan-metodo-2aa.png)    
+![Configuración Método 2](images/dia18/native-vlan-metodo-2aaa.png)    
 
 ---
 
 ## Wireshark Analysis
 
 Al capturar el tráfico entre un switch y un router en una configuración **ROAS**, se puede observar el comportamiento de la **VLAN nativa**. Los paquetes de la **VLAN nativa** aparecen **sin etiquetas 802.1Q**, mientras que el tráfico de las demás VLANs tiene la etiqueta **802.1Q** claramente visible. Esto confirma que el tráfico nativo no se encapsula con la etiqueta de VLAN.
-### Método 1
+
 ![Captura WireShark Metodo 1](images/dia18/wireshark-metodo-1.png)
 ![Captura WireShark Metodo 1](images/dia18/wireshark-metodo-11.png)
 ![Captura WireShark Metodo 1](images/dia18/wireshark-metodo-111.png)
 ![Captura WireShark Metodo 1](images/dia18/wireshark-metodo-1111.png)
-
-### Método 1
-![Captura WireShark Metodo 2](images/dia18/wireshark-metodo-2.png)
-![Captura WireShark Metodo 2](images/dia18/wireshark-metodo-22.png)
-![Captura WireShark Metodo 2](images/dia18/wireshark-metodo-222.png)
-![Captura WireShark Metodo 2](images/dia18/wireshark-metodo-2222.png)
 ---
 
 ## Switches de Capa 3 (Multilayer)
