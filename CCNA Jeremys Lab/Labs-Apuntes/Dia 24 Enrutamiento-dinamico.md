@@ -75,4 +75,6 @@ Cuando un router aprende rutas al mismo destino a través de diferentes protocol
 
 ![Ejemplo de tabla de enrutamiento con AD](images/dia24/tabla-ad.png)
 
+## Floating Static Routes
+
 Una **ruta estática flotante** es una ruta estática a la que se le asigna un AD más alto (generalmente mayor que 1). Esto la hace menos preferida que una ruta aprendida por un protocolo de enrutamiento dinámico, por lo que solo se activa y se coloca en la tabla de enrutamiento si la ruta principal se pierde.

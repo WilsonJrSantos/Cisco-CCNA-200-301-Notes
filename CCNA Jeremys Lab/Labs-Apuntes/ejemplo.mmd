@@ -1,0 +1,181 @@
+classDiagram
+    class Usuario {
+        -int idUsuario
+        -string nombre
+        -string email
+        -string rol
+        +iniciarSesion()
+        +buscarLibro()
+    }
+    
+    class Estudiante {
+        -string carrera
+        -int semestre
+        -int limitePrestramos
+        +realizarPrestamo()
+        +renovarPrestamo()
+    }
+    
+    class Bibliotecario {
+        -string departamento
+        -date fechaIngreso
+        -boolean permisoGestion
+        +gestionarCatalogo()
+        +aprobarReserva()
+    }
+    
+    class Administrador {
+        -string nivelAcceso
+        -boolean permisoTotal
+        -date ultimoAcceso
+        +generarReportes()
+        +gestionarUsuarios()
+    }
+    
+    class Libro {
+        -int idLibro
+        -string titulo
+        -string autor
+        -string isbn
+        -string categoria
+        -boolean disponible
+        +buscar()
+        +mostrarDetalles()
+    }
+    
+    class LibroFisico {
+        -string ubicacion
+        -string estado
+        -int ejemplares
+        +verificarDisponibilidad()
+        +actualizarEstado()
+    }
+    
+    class LibroElectronico {
+        -string formato
+        -string urlArchivo
+        -int tamanoMB
+        +visualizar()
+        +descargarTemporal()
+    }
+    
+    class Prestamo {
+        -int idPrestamo
+        -date fechaInicio
+        -date fechaVencimiento
+        -string estadoclassDiagram
+    class Usuario {
+        -int idUsuario
+        -string nombre
+        -string email
+        -string rol
+        +iniciarSesion()
+        +buscarLibro()
+    }
+    
+    class Estudiante {
+        -string carrera
+        -int semestre
+        -int limitePrestramos
+        +realizarPrestamo()
+        +renovarPrestamo()
+    }
+    
+    class Bibliotecario {
+        -string departamento
+        -date fechaIngreso
+        -boolean permisoGestion
+        +gestionarCatalogo()
+        +aprobarReserva()
+    }
+    
+    class Administrador {
+        -string nivelAcceso
+        -boolean permisoTotal
+        -date ultimoAcceso
+        +generarReportes()
+        +gestionarUsuarios()
+    }
+    
+    class Libro {
+        -int idLibro
+        -string titulo
+        -string autor
+        -string isbn
+        -string categoria
+        -boolean disponible
+        +buscar()
+        +mostrarDetalles()
+    }
+    
+    class LibroFisico {
+        -string ubicacion
+        -string estado
+        -int ejemplares
+        +verificarDisponibilidad()
+        +actualizarEstado()
+    }
+    
+    class LibroElectronico {
+        -string formato
+        -string urlArchivo
+        -int tamanoMB
+        +visualizar()
+        +descargarTemporal()
+    }
+    
+    class Prestamo {
+        -int idPrestamo
+        -date fechaInicio
+        -date fechaVencimiento
+        -string estado
+        -boolean renovado
+        +calcularVencimiento()
+        +renovar()
+    }
+    
+    class Reserva {
+        -int idReserva
+        -date fechaReserva
+        -date fechaExpiracion
+        -string estado
+        +confirmarReserva()
+        +cancelarReserva()
+    }
+    
+    Usuario <|-- Estudiante
+    Usuario <|-- Bibliotecario
+    Usuario <|-- Administrador
+    Libro <|-- LibroFisico
+    Libro <|-- LibroElectronico
+    
+    Usuario ||--o{ Prestamo : realiza
+    Usuario ||--o{ Reserva : hace
+    Libro ||--o{ Prestamo : involucra
+    LibroFisico ||--o{ Reserva : involucra
+    Prestamo }o--|| LibroElectronico : "préstamo virtual"
+        -boolean renovado
+        +calcularVencimiento()
+        +renovar()
+    }
+    
+    class Reserva {
+        -int idReserva
+        -date fechaReserva
+        -date fechaExpiracion
+        -string estado
+        +confirmarReserva()
+        +cancelarReserva()
+    }
+    
+    Usuario <|-- Estudiante
+    Usuario <|-- Bibliotecario
+    Usuario <|-- Administrador
+    Libro <|-- LibroFisico
+    Libro <|-- LibroElectronico
+    
+    Usuario ||--o{ Prestamo : realiza
+    Usuario ||--o{ Reserva : hace
+    Libro ||--o{ Prestamo : involucra
+    LibroFisico ||--o{ Reserva : involucra
+    Prestamo }o--|| LibroElectronico : "préstamo virtual"
