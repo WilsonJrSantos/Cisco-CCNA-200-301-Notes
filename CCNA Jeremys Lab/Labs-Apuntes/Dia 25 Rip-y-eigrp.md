@@ -48,7 +48,7 @@ RIP es un protocolo de enrutamiento de vector de distancia (Distance Vector) que
 1. **Request**: Solicita tabla de routing a vecinos RIP
 2. **Response**: Envía tabla de routing local a routers vecinos
 
-![Diagrama de topología RIP](images/lab-dia25/rip-topology.png)
+![Diagrama de topología RIP](images/dia25/rip-topology.png)
 
 
 
@@ -67,7 +67,7 @@ network 10.0.0.0
 network 172.16.0.0
 ```
 
-![Configuración de red RIP](images/lab-dia25/rip-network-config.png)
+![Configuración de red RIP](images/dia25/rip-network-config.png)
 
 ### Funcionalidad del Comando Network
 El comando `network` le dice al router que:
@@ -89,7 +89,7 @@ passive-interface g2/0
 - Continúa anunciando el prefijo de red de la interfaz a vecinos RIP
 - **Usar siempre** en interfaces sin vecinos RIP para evitar tráfico innecesario
 
-![Configuración interfaz pasiva](images/lab-dia25/rip-passive-interface.png)
+
 
 ### Ruta por Defecto
 Para anunciar una ruta por defecto en RIP:
@@ -99,11 +99,12 @@ router rip
 default-information originate
 ```
 
-![Comando default-information originate](images/lab-dia25/rip-default-route.png)
+![Comando default-information originate](images/dia25/rip-default-route.png)
+![Comando default-information originate](images/dia25/rip-default-route1.png)
 
 ---
 ## Comandos de Verificación
-
+![Comandos show ip protocols y show ip route](images/dia25/rip-show-commands.png)
 ### RIP
 ```cisco
 show ip protocols
@@ -139,7 +140,7 @@ network 172.16.1.0 0.0.0.15
 - **Deshabilitar auto-summary** si está habilitado
 - Usa **wildcard mask** en lugar de subnet mask regular
 
-![Configuración EIGRP](images/lab-dia25/eigrp-configuration.png)
+![Configuración EIGRP](images/dia25/eigrp-configuration.png)
 
 ---
 
@@ -170,7 +171,7 @@ Wildcard:    0.0.7.255
            255-255=0, 255-248=7, etc.
 ```
 
-![Ejemplos de wildcard masks](images/lab-dia25/wildcard-masks.png)
+![Ejemplos de wildcard masks](images/dia25/wildcard-masks.png)
 
 ### Lógica de Coincidencia
 - **'0'** en wildcard mask = **debe coincidir**
@@ -185,8 +186,8 @@ Wildcard:    0.0.7.255
 2. **Dirección IP más alta** en interfaz loopback
 3. **Dirección IP más alta** en interfaz física
 
-![Comandos show ip protocols y show ip route](images/lab-dia25/eigrp-show-commands.png)
-
+![Comandos show ip protocols y show ip route](images/dia25/eigrp-show-commands.png)
+![Comandos show ip protocols y show ip route](images/dia25/eigrp-show-commands1.png)
 ---
 
 ## Comandos de Verificación
