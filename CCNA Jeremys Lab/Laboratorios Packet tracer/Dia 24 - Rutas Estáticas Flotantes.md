@@ -1,4 +1,4 @@
-# Dia 24 - Laboratorio de Redes – Rutas Estáticas Flotantes  
+# Dia 24 - Laboratorio de Rutas Estáticas Flotantes  
 
 ---
 
@@ -10,7 +10,7 @@ Configurar y verificar **rutas estáticas flotantes** en los routers **R1** y **
 
 ## 🗺️ Topología de Red
 
-![Topología de red](images/lab-dia25/topologia.png)
+![Topología de red](images/lab-dia24/topologia.png)
 
 La empresa **A** cuenta con dos redes LAN:
 - **LAN 1:** `10.0.1.0/24` conectada a **R1**  
@@ -49,7 +49,7 @@ show ip route
 
 ➡️ **Ruta hacia 1.1.1.1 (Internet):** vía ruta por defecto → ISP B
 
-![R1](images/lab-dia25/shipr1.png)
+![R1](images/lab-dia24/shipr1.png)
 
 
 ### En **R2**
@@ -65,7 +65,7 @@ show ip route
 * Ruta por defecto a `203.0.113.13` (ISP B).
 * Ruta OSPF a `10.0.1.0/24` aprendida desde R1.
 
-![R1](images/lab-dia25/shipr2.png)
+![R1](images/lab-dia24/shipr2.png)
 
 ---
 
@@ -83,7 +83,7 @@ ping 1.1.1.1
 * Ping a `10.0.2.1` (SRV1) exitoso por la ruta OSPF R1 → R2.
 * Ping a `1.1.1.1` exitoso por la ruta por defecto hacia ISP B.
 
-![Ping inicial](images/lab-dia25/ping-inicial.png)
+![Ping inicial](images/lab-dia24/ping-inicial.png)
 
 ---
 
@@ -114,7 +114,7 @@ do show ip route
 
 📌 Igual que en R1, la ruta flotante se configura pero **no se instala** mientras la ruta OSPF esté activa.
 
-![Configuración en routers](images/lab-dia25/configuracion-ruta-flotante.png)
+![Configuración en routers](images/lab-dia24/configuracion-ruta-flotante.png)
 
 ---
 
@@ -164,7 +164,7 @@ do show ip route
 
 ➡️ Ahora las rutas estáticas flotantes **se activan automáticamente** como rutas de respaldo.
 
-![Ruta activa con AD 111](images/lab-dia25/ruta-flotante-activa.png)
+![Ruta activa con AD 111](images/lab-dia24/ruta-flotante-activa.png)
 
 ---
 
@@ -183,7 +183,7 @@ ping 10.0.2.1
 
   * R1 → ISP A (SPR1) → ISP A (SPR2) → R2 → SRV1
 
-![Ping por ruta flotante](images/lab-dia25/ping-flotante.png)
+![Ping por ruta flotante](images/lab-dia24/ping-flotante.png)
 
 ---
 
@@ -207,7 +207,7 @@ tracert 10.0.2.1
 
 ➡️ Se confirma que el tráfico ahora sigue la **ruta de respaldo** vía **ISP A**.
 
-![Traceroute ruta flotante](images/lab-dia25/traceroute.png)
+![Traceroute ruta flotante](images/lab-dia24/traceroute.png)
 
 ---
 
