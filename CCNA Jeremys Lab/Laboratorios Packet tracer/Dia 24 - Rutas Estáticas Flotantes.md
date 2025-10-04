@@ -44,7 +44,9 @@ show ip route
 * Ruta OSPF a `10.0.2.0/24` aprendida desde R2.
 
 ➡️ **Protocolo de enrutamiento dinámico:** `OSPF`
+
 ➡️ **Ruta hacia SRV1 (10.0.2.1):** vía OSPF hacia R2
+
 ➡️ **Ruta hacia 1.1.1.1 (Internet):** vía ruta por defecto → ISP B
 
 ![R1](images/lab-dia25/shipr1.png)
