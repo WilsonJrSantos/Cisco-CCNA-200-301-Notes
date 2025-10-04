@@ -1,4 +1,4 @@
-# Dia 25 - Laboratorio de Redes – Rutas Estáticas Flotantes  
+# Dia 24 - Laboratorio de Redes – Rutas Estáticas Flotantes  
 
 ---
 
